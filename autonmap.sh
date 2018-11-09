@@ -46,7 +46,8 @@ then
 
     echo "`date` - Checking ndiff output"
     # There is always two lines of difference; the run header that has the time/date in. So we can discount that.
-    if [ `echo "$DIFF" | wc -l` -gt 2 ]
+    # match for 'open' ports only. don't care about interchange between filtered and closed ports 
+    if [ `echo "$DIFF" | tail -n +4 | grep open | wc -l` -ne 0 ] 
     then
             echo "`date` - Differences Detected. Sending mail."
             #Added a for loop to send the emails because sending the email to 3 recipients was getting kicked back by Office365.
