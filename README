@@ -12,10 +12,15 @@ emails the results to a specified email address.
 It also puts a copy of the report into a directory so you can view it
 online/share it around, rather than viewing just the diff. 
 
+Requires:
+nmap
+ndiff
+xsltproc
+
 INSTALL:
 
 Place autonmap.sh in a directory. e.g. /usr/local/autonmap/
-Change the options at the top of the script (e.g. scan subnet(s), email recipient(s))
+Change the options in autonmap.conf (e.g. scan subnet(s), email recipient(s))
 Add to cron using something like:
     0 9 * * * /usr/local/autonmap/autonmap.sh >> /var/log/autonmap/autonmap.log 2>&1
 
