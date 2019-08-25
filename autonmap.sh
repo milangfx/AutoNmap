@@ -7,7 +7,6 @@ source autonmap.conf
 echo "`date` - Welcome to AutoNmap2."
 
 # Ensure we can change to the run directory
-echo $RUN_DIRECTORY
 cd $RUN_DIRECTORY || exit 2
 echo "`date` - Running nmap, please wait. This may take a while."
 # $NMAP --open -T4 -Pn $SCAN_SUBNETS -n -oX scan-$DATE.xml > /dev/null
